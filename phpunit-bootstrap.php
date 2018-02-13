@@ -8,3 +8,8 @@ if (getenv('CUSTOM_ERROR_TRAP')) {
         }
     );
 }
+
+// support 5.x and 6.x phpunit
+if ( ! class_exists('PHPUnit_Framework_Testcase')) {
+    class_alias('PHPUnit\Framework\Testcase', 'PHPUnit_Framework_Testcase');
+}
