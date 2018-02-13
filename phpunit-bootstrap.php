@@ -1,5 +1,5 @@
 <?php
-if (isset($_ENV['CUSTOM_ERROR_TRAP']) && $_ENV['CUSTOM_ERROR_TRAP']) {
+if (getenv('CUSTOM_ERROR_TRAP')) {
     fwrite(STDOUT, 'Using custom error trap'."\n");
 
     set_error_handler(
